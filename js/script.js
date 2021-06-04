@@ -3,19 +3,21 @@
 function titleClickHandler(event){
   console.log('Link was clicked!');
   console.log(event)
-  console.log(sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: false}
-    srcElement: span
-    target: span
-    timeStamp: 1535.2850000053877
-    toElement: span
-    type: "click"
-    )
-  /* remove class 'active' from all article links  */
 
+  /* remove class 'active' from all article links  */
+  const activeLinks = document.querySelectorAll('.titles a.active');
+
+  for(let activeLink of activeLinks){
+    activeLink.classList.remove('active');
+  }
   /* add class 'active' to the clicked link */
 
   /* remove class 'active' from all articles */
+  const activeArticles = document.querySelectorAll('.titles a.active');
 
+  for(let activeArticle of activeArticles){
+    activeArticle.classList.remove('.post active');
+  }
   /* get 'href' attribute from the clicked link */
 
   /* find the correct article using the selector (value of 'href' attribute) */
