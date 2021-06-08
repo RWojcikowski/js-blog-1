@@ -75,7 +75,7 @@ for (let article of articles) {
     console.log (articleId)
 
     /* get the title from the title element */
-  //  listTitle.innerHTML += linkHTML
+  
    
     /* create HTML of the link */
    listTitle.insertAdjacentHTML("beforeend",linkHTML)
