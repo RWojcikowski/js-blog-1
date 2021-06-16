@@ -222,8 +222,6 @@ function generateAuthors() {
       '"><span>' +
       authorTag +
       "</span></a></li>";
-    //console.log(linkHTML);
-    //console.log(author);
 
     list.insertAdjacentHTML("beforeend", linkHTML);
   }
@@ -231,25 +229,34 @@ function generateAuthors() {
 generateAuthors();
 
 function authorClickHandler(event) {
-  // event.preventDefault();
+  event.preventDefault();
+
   const clickedElement = this;
 
-  console.log(clickedElement);
+  console.log(this);
 
   const href = clickedElement.getAttribute("href");
+  // console.log(href);
 
-  console.log(href);
+  const author = href.replace("#author-", "");
+  // console.log(author);
 
-  generateTitleLinks('[data-authors ="' + author + '"]');
+  const authors = document.querySelectorAll('a[href^="#author-"]');
+  // console.log(authors);
+
+  const authorsLinks = document.querySelectorAll(`a[href^="${href}"`);
+  for (let author of authorsLinks) {
+  }
+
+  generateTitleLinks('[data-author ="' + author + '"]');
 }
-authorClickHandler();
 
 function addClickListenersToAuthors() {
   const href = document.querySelectorAll('a[href^="#author-"]');
-  console.log(href);
+  // console.log(href);
   for (let author of href) {
     author.addEventListener("click", authorClickHandler);
-    console.log(author);
+    // console.log(author);
   }
 }
 addClickListenersToAuthors();
