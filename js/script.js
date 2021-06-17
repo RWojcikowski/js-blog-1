@@ -242,7 +242,7 @@ function authorClickHandler(event) {
   const author = href.replace("#author-", "");
   // console.log(author);
 
-  const authors = document.querySelectorAll('a.active[href^="#tag-"]');
+  const authors = document.querySelectorAll('a.active[href^="#author-"]');
   // console.log(authors);
   for (let author of authors) {
     if (author.className == "active") {
