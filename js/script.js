@@ -101,24 +101,24 @@ function generateTitleLinks(customSelector = "") {
 }
 generateTitleLinks();
 
-function calculateTagClass() {
-  const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
-  console.log("taglinkHTML:", taglinkHTML);
-  tagLinkHTML = "<li>" + calculateTagClass(allTags[tag], tagsParam) + "<li>";
-  console.log("tagLinkHTML", taglinkHTML);
+// function calculateTagClass() {
+//   const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
+//   console.log("taglinkHTML:", taglinkHTML);
+//   tagLinkHTML = "<li>" + calculateTagClass(allTags[tag], tagsParam) + "<li>";
+//   console.log("tagLinkHTML", taglinkHTML);
 
-  const normalizedCount = count - params.min;
+//   const normalizedCount = count - params.min;
 
-  const normalizedMax = params.max - params.min;
+//   const normalizedMax = params.max - params.min;
 
-  const percentage = normalizedCount / normalizedMax;
+//   const percentage = normalizedCount / normalizedMax;
 
-  const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+//   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
 
-  const optCloudClassPrefix = classNumber;
-  console.log(optCloudclassPrefix);
-}
-calculateTagClass();
+//   const optCloudClassPrefix = classNumber;
+//   console.log(optCloudclassPrefix);
+// }
+// calculateTagClass();
 
 function generateTags() {
   /* find all articles */
@@ -291,71 +291,112 @@ function addClickListenersToAuthors() {
 }
 addClickListenersToAuthors();
 
+function generateTags() {
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = {};
+
+  /* find all articles */
+
+  /* START LOOP: for every article: */
+
+  /* find tags wrapper */
+
+  /* make html variable with empty string */
+
+  /* get tags from data-tags attribute */
+
+  /* split tags into array */
+
+  /* START LOOP: for each tag */
+
+  /* generate HTML of the link */
+
+  /* add generated code to html variable */
+
+  /* [NEW] check if this link is NOT already in allTags */
+  if (allTags.indexOf(linkHTML) == -1) {
+    /* [NEW] add generated code to allTags array */
+    allTags.push(linkHTML);
+  }
+
+  /* END LOOP: for each tag */
+
+  /* insert HTML of all the links into the tags wrapper */
+
+  /* END LOOP: for every article: */
+
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector(".tags");
+
+  /* [NEW] add html from allTags to tagList */
+  tagList.innerHTML = allTags.join(" ");
+}
+
 // function generateTags() {
-//   /* [NEW] create a new variable allTags with an empty array */
-let allTags = {};
+// //   /* [NEW] create a new variable allTags with an empty array */
+// let allTags = {};
 
-//   /* find all articles */
+// //   /* find all articles */
 
-//   /* START LOOP: for every article: */
+// //   /* START LOOP: for every article: */
 
-//   /* find tags wrapper */
+// //   /* find tags wrapper */
 
-//   /* make html variable with empty string */
+// //   /* make html variable with empty string */
 
-//   /* get tags from data-tags attribute */
+// //   /* get tags from data-tags attribute */
 
-//   /* split tags into array */
+// //   /* split tags into array */
 
-//   /* START LOOP: for each tag */
+// //   /* START LOOP: for each tag */
 
-//   /* generate HTML of the link */
+// //   /* generate HTML of the link */
 
-//   /* add generated code to html variable */
+// //   /* add generated code to html variable */
 
-//   /* [NEW] check if this link is NOT already in allTags */
+// //   /* [NEW] check if this link is NOT already in allTags */
 
-if (!allTags.hasOwnProperty(tag)) {
-  //     /* [NEW] add generated code to allTags array */
-  allTags[tag] = 1;
-} else {
-  allTags[tag]++;
-}
-
-//   /* END LOOP: for each tag */
-
-//   /* insert HTML of all the links into the tags wrapper */
-
-//   /* END LOOP: for every article: */
-
-//   /* [NEW] find list of tags in right column */
-const tagList = document.querySelector(".tags");
-
-//   /* [NEW] add html from allTags to tagList */
-const tagsParams = calculateTagsPharms(allTags);
-console.log("tagsParams:", tagsParams);
-let allTagsHTML = "";
-
-for (let tag in allTags) {
-  allTagsHTML += taglinkHTML;
-  // allTagsHTML += tagclass="" + " (" + allTags[tag] + ") ";
-}
-
-tagList.innerHTML = allTags.join(" ");
+// if (!allTags.hasOwnProperty(tag)) {
+//   //     /* [NEW] add generated code to allTags array */
+//   allTags[tag] = 1;
+// } else {
+//   allTags[tag]++;
 // }
 
-function calculateTagsPharms() {
-  for (let tag in tags) {
-    console.log(tag + " is used " + tags[tag] + " times");
-  }
-  if (tags[tag] > params.max) {
-    params.max = tags[tag];
-  }
-  if (tags[tag] > params.min) {
-    params.min = tags[tag];
-  }
+// //   /* END LOOP: for each tag */
 
-  return params;
-}
+// //   /* insert HTML of all the links into the tags wrapper */
 
-calculateTagsPharms();
+// //   /* END LOOP: for every article: */
+
+// //   /* [NEW] find list of tags in right column */
+// const tagList = document.querySelector(".tags");
+
+// //   /* [NEW] add html from allTags to tagList */
+// const tagsParams = calculateTagsPharms(allTags);
+// console.log("tagsParams:", tagsParams);
+// let allTagsHTML = "";
+
+// for (let tag in allTags) {
+//   allTagsHTML += taglinkHTML;
+//   // allTagsHTML += tagclass="" + " (" + allTags[tag] + ") ";
+// }
+
+// tagList.innerHTML = allTags.join(" ");
+//  }
+
+// function calculateTagsPharms() {
+//   for (let tag in tags) {
+//     console.log(tag + " is used " + tags[tag] + " times");
+//   }
+//   if (tags[tag] > params.max) {
+//     params.max = tags[tag];
+//   }
+//   if (tags[tag] > params.min) {
+//     params.min = tags[tag];
+//   }
+
+//   return params;
+// }
+
+// calculateTagsPharms();
