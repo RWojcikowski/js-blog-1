@@ -124,3 +124,26 @@ body {
     margin: 0 10px 0 0;
   }
 }
+.tags li {
+  display: inline-block;
+}
+.tag-size-1 {
+  background-color: green;
+  width: 30%;
+}
+.tag-size-2 {
+  background-color: yellow;
+  width: 35%;
+}
+.tag-size-3 {
+  background-color: purple;
+  width: 40%;
+}
+.tag-size-4 {
+  background-color: orange;
+  width: 45%;
+}
+.tag-size-5 {
+  background-color: blue;
+  width: 50%;
+}
