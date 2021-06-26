@@ -101,7 +101,7 @@ function generateTitleLinks(customSelector = '') {
     link.addEventListener('click', titleClickHandler);
   }
 };
-// generateTitleLinks();
+generateTitleLinks();
 
 function calculateTagsParams(tags) {
 
@@ -218,7 +218,7 @@ function generateTags() {
   for (let tag in allTags) {
     /* */
 
-    const tagsLinkHTML = '<li class="' + calculateTagClass(allTags[tag], tagsParams) + '" ><a  href="#tags-' + tag + '">' + tag + '</a></li>';
+    const tagsLinkHTML = '<li class="' + calculateTagClass(allTags[tag], tagsParams) + '" ><a  href="#tag-' + tag + '">' + tag + '</a></li>';
     // console.log('tagLinkHTML:', tagsLinkHTML);
 
     allTagsHTML += tagsLinkHTML;
@@ -335,36 +335,35 @@ function generateAuthors() {
   //console.log(authors);
   for (let article of articles) {
     //console.log(author);
-
-    //console.log(html);
-    const author = article.querySelector(optArticleAuthorSelector);
-
-    console.log(author);
+    // 
+    // 
+    // 
+    // 
 
 
     let html = '';
-    const authorList = article.dataset.author;
-    // console.log(authorTag)
+    const authorTag = article.dataset.author;
+    console.log(authorTag)
 
 
-    const linkHTML = '<li><a href="#-' + author + '"><span>' + author + '</span></a></li>';
+    const linkHTML = '<li><a href="#-' + authorTag + '"><span>' + authorTag + '</span></a></li>';
 
     html = html + linkHTML;
     /* [NEW] check if this link is NOT already in allTags */
-    if (!allAuthors.hasOwnProperty(author)) {
+    if (!allAuthors.hasOwnProperty(authorTag)) {
       /* [NEW] add generated code to allTags array */
-      allAuthors[author] = 1;
+      allAuthors[authorTag] = 1;
     } else {
-      allAuthors[author]++;
+      allAuthors[authorTag]++;
 
     }
 
     const list = article.querySelector(optArticleAuthorSelector);
     //console.log(list);
-    list.insertAdjacentHTML('beforeend', linkHTML);
+    list.insertAdjacentHTML('beforeend', html);
     // console.log(list);
   }
-  const authorList = document.querySelector('.authors');
+  const authorList = document.querySelector('.list.authors');
   console.log(authorList);
   const authorsParams = calculateAuthorsParams(allAuthors);
   console.log('authorParams', authorsParams);
@@ -373,16 +372,16 @@ function generateAuthors() {
 
   for (let author in allAuthors) {
 
-    const authorsLinkHTML = '<li class="' + calculateAuthorsClass(allAuthors[author], authorsParams) + '" ><a  href="#authors-' + author + '">' + author + '</a></li>';
+    const authorsLinkHTML = '<li class="' + calculateAuthorsClass(allAuthors[author], authorsParams) + '" ><a  href="#author-' + author + '">' + author + '</a></li>';
     console.log('authorsLinkHTML:', authorsLinkHTML);
 
     // allAuthorsHTML += '<li><a href="#authors-' + author + '"><span>' + allAuthors[author] + '</span></a></li>';
     allAuthorsHTML += authorsLinkHTML;
-    console.log(allAuthorsHTML)
+    console.log(authorsLinkHTML)
   }
 
   authorList.innerHTML = allAuthorsHTML;
-  // authorList.innerHTML = allAuthors.join(' ');
+
 }
 generateAuthors();
 
