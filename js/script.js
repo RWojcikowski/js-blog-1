@@ -179,7 +179,7 @@ function generateTags() {
 
       /* add generated code to html variable */
       const linkHTML =
-        '<li><a href="#-' + tag + '"><span>' + tag + '</span></a></li>';
+        '<li><a  href="#tag-' + tag + '">' + tag + '</a></li>';
       //console.log(linkHTML);
       //console.log(tag);
 
@@ -346,7 +346,7 @@ function generateAuthors() {
     console.log(authorTag)
 
 
-    const linkHTML = '<li><a href="#-' + authorTag + '"><span>' + authorTag + '</span></a></li>';
+    const linkHTML = '<li><a href="#author-' + authorTag + '"><span>' + authorTag + '</span></a></li>';
 
     html = html + linkHTML;
     /* [NEW] check if this link is NOT already in allTags */
