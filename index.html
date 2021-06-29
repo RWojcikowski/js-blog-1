@@ -374,24 +374,24 @@
         </main>
       </div>
     </div>
-  
   <script id="template-article-link" type="text/x-handlebars-template">
     <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
     </script>
  <script id="template-tags-link" type="text/x-handlebars-template">
-  <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+  <li><a href="#tag-{{ id }}"><span>{{ title }}</span></a></li>
   </script>
   <script id="template-authors-link" type="text/x-handlebars-template">
-    <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+    <li><a href="#author-{{ id }}"><span>{{ title }}</span></a></li>
     </script>
     <script id="template-tag-cloud-link" type="text/x-handlebars-template">
       {{#each tags}}
-      <li>{{ tag }}</li>
-      {{/each}}
+      <li class="{{className}}"><a href="#tag-{{ tag }}"><span>{{ tag }} ({{ count }})</span></a></li>
+      {{/each}}    
     </script>
     <script id="template-author-cloud-link" type="text/x-handlebars-template">
-      {{#each author}}
-      <li>{{ author }}</li>
+      {{#each authors}}
+      <li class="{{ className }}"><a href="#author-{{ author }}"> <span>{{ author }}  ( {{count}} )</span></a></li>
+     
       {{/each}}
     </script>
 
